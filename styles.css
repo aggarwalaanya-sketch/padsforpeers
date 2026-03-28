@@ -225,7 +225,7 @@ img {
    ============================================ */
 .hero-banner {
   position: relative;
-  background: linear-gradient(135deg, var(--maroon) 0%, #b8295e 40%, var(--pink-1) 100%);
+  background: var(--maroon);
   padding: 6rem 2rem;
   text-align: center;
   overflow: hidden;
