@@ -21,29 +21,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // ---- Active Nav Highlight on Scroll ----
-  const sections = document.querySelectorAll('.section');
-  const navLinks = document.querySelectorAll('.nav-link');
-
-  function updateActiveNav() {
-    let current = '';
-    sections.forEach(section => {
-      const sectionTop = section.offsetTop - 120;
-      if (window.scrollY >= sectionTop) {
-        current = section.getAttribute('id');
-      }
-    });
-
-    navLinks.forEach(link => {
-      link.classList.remove('active');
-      if (link.getAttribute('href') === '#' + current) {
-        link.classList.add('active');
-      }
-    });
-  }
-
-  window.addEventListener('scroll', updateActiveNav);
-
   // ---- Stat Counter Animation ----
   const statNumbers = document.querySelectorAll('.stat-number');
   const animatedStats = new Set();
@@ -147,47 +124,8 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  startAutoSlide();
-
-  // ---- Smooth scroll offset for sidebar links ----
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-      e.preventDefault();
-      const targetId = this.getAttribute('href');
-      const target = document.querySelector(targetId);
-      if (target) {
-        const offset = 20;
-        const top = target.getBoundingClientRect().top + window.scrollY - offset;
-        window.scrollTo({ top, behavior: 'smooth' });
-        history.pushState(null, '', targetId);
-      }
-    });
-  });
-
-  // ---- Scroll to hash on page load (for shared URLs) ----
-  if (window.location.hash) {
-    const target = document.querySelector(window.location.hash);
-    if (target) {
-      setTimeout(() => {
-        const offset = 20;
-        const top = target.getBoundingClientRect().top + window.scrollY - offset;
-        window.scrollTo({ top, behavior: 'smooth' });
-      }, 100);
-    }
+  if (slides.length > 0) {
+    startAutoSlide();
   }
-
-  // ---- Update hash in URL as user scrolls ----
-  window.addEventListener('scroll', () => {
-    let current = '';
-    sections.forEach(section => {
-      const sectionTop = section.offsetTop - 120;
-      if (window.scrollY >= sectionTop) {
-        current = section.getAttribute('id');
-      }
-    });
-    if (current && window.location.hash !== '#' + current) {
-      history.replaceState(null, '', '#' + current);
-    }
-  });
 
 });
