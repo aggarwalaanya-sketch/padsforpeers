@@ -90,6 +90,16 @@ img {
   color: var(--pink-3);
 }
 
+.sidebar-logo {
+  width: 100%;
+  max-width: 180px;
+  display: block;
+}
+
+.sidebar-logo:hover {
+  opacity: 0.85;
+}
+
 .nav-links {
   list-style: none;
   padding: 1rem 0;
