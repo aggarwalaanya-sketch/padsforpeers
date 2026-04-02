@@ -417,7 +417,7 @@ img {
   aspect-ratio: 16 / 9;
   border-radius: 16px;
   overflow: hidden;
-  background: #1a1a1a;
+  background: var(--pink-5);
   box-shadow: 0 4px 20px rgba(148, 33, 77, 0.08);
 }
 
@@ -435,8 +435,7 @@ img {
 .slide img {
   width: 100%;
   height: 100%;
-  object-fit: contain;
-  background: #1a1a1a;
+  object-fit: cover;
 }
 
 .slide-placeholder {
