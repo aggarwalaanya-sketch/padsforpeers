@@ -283,6 +283,7 @@ img {
 #cycling-word {
   display: inline-block;
   transition: opacity 0.4s ease;
+  font-size: 1.8rem;
 }
 
 #cycling-word.fade {
