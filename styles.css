@@ -199,6 +199,10 @@ img {
   padding: 5rem 0;
 }
 
+.hero-section {
+  padding-top: 0;
+}
+
 .section-alt {
   background: var(--pink-5);
 }
@@ -283,7 +287,6 @@ img {
 #cycling-word {
   display: inline-block;
   transition: opacity 0.4s ease;
-  font-size: 1.8rem;
 }
 
 #cycling-word.fade {
