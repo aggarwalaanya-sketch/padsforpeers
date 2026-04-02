@@ -4,7 +4,7 @@
 
 /* Blog Header (listing page) */
 .blog-header {
-  background: linear-gradient(135deg, var(--maroon) 0%, #b8295e 40%, var(--pink-1) 100%);
+  background: var(--maroon);
   padding: 5rem 2rem 3rem;
   text-align: center;
   color: var(--white);
