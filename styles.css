@@ -269,12 +269,24 @@ img {
    ============================================ */
 .blurb-card {
   background: var(--white);
-  border-left: 4px solid var(--pink-2);
   padding: 2rem;
   margin: 3rem 0;
-  border-radius: 0 12px 12px 0;
+  border-radius: 12px;
   box-shadow: 0 4px 20px rgba(148, 33, 77, 0.08);
-  font-size: 1.05rem;
+  font-size: 1.3rem;
+}
+
+.blurb-card strong {
+  color: var(--maroon);
+}
+
+#cycling-word {
+  display: inline-block;
+  transition: opacity 0.4s ease;
+}
+
+#cycling-word.fade {
+  opacity: 0;
 }
 
 /* ============================================

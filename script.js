@@ -128,4 +128,20 @@ document.addEventListener('DOMContentLoaded', () => {
     startAutoSlide();
   }
 
+  // ---- Cycling Word ----
+  const cyclingWord = document.getElementById('cycling-word');
+  if (cyclingWord) {
+    const words = ['education', 'health', 'self-confidence'];
+    let wordIndex = 0;
+
+    setInterval(() => {
+      cyclingWord.classList.add('fade');
+      setTimeout(() => {
+        wordIndex = (wordIndex + 1) % words.length;
+        cyclingWord.textContent = words[wordIndex];
+        cyclingWord.classList.remove('fade');
+      }, 400);
+    }, 2000);
+  }
+
 });
