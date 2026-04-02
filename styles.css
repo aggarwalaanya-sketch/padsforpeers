@@ -506,9 +506,15 @@ img {
 /* Team Grid */
 .team-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 2rem;
   margin-top: 1.5rem;
+}
+
+.team-grid .team-card:last-child:nth-child(odd) {
+  grid-column: 1 / -1;
+  max-width: calc(50% - 1rem);
+  margin: 0 auto;
 }
 
 .team-card {
