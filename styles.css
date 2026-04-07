@@ -240,7 +240,7 @@ img {
 .hero-banner {
   position: relative;
   background: var(--maroon);
-  padding: 6rem 2rem;
+  padding: 3rem 2rem;
   text-align: center;
   overflow: hidden;
 }
