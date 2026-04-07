@@ -908,6 +908,11 @@ img {
 
   .blurb-card {
     padding: 1.5rem;
+    font-size: 1rem;
+  }
+
+  #cycling-word {
+    font-size: 1rem;
   }
 
   .mission-banner {
