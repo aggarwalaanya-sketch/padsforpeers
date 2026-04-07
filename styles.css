@@ -1008,6 +1008,11 @@ img {
   line-height: 1.7;
 }
 
+.partner-content-box p.partner-box-title,
+.step-card p.step-title {
+  color: var(--maroon);
+}
+
 .partner-box-title {
   font-size: 1.2rem;
   font-weight: 700;
