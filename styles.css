@@ -844,10 +844,25 @@ img {
 @media (max-width: 900px) {
   .sidebar {
     transform: translateX(-100%);
+    width: 100%;
+    max-width: 320px;
   }
 
   .sidebar.open {
     transform: translateX(0);
+  }
+
+  .sidebar-header {
+    padding: 1.5rem 1.5rem 1.2rem;
+  }
+
+  .sidebar-logo {
+    max-width: 140px;
+  }
+
+  .nav-link {
+    padding: 1rem 1.5rem;
+    font-size: 1.05rem;
   }
 
   .menu-toggle {
@@ -864,6 +879,23 @@ img {
 
   .team-grid {
     grid-template-columns: 1fr;
+  }
+
+  .team-grid .team-card:last-child:nth-child(odd) {
+    grid-column: auto;
+    max-width: 100%;
+    margin: 0;
+  }
+
+  .team-card {
+    flex-direction: row;
+    align-items: stretch;
+  }
+
+  .team-photo {
+    width: 140px;
+    min-width: 140px;
+    height: auto;
   }
 
   .action-buttons {
