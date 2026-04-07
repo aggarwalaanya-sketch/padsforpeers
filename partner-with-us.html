@@ -53,7 +53,7 @@
           <p class="partner-tag">For School Administrators and Nurses</p>
           <h1>Bring Pads for Peers to Your School</h1>
           <p>Pads for Peers helps schools provide free menstrual care products to students through a simple, discreet monthly Comfort Box program—with minimal effort required from staff.</p>
-          <a href="#interest-form" class="btn btn-primary" style="background:#fff; color:var(--maroon);">Express Interest</a>
+          <a href="#interest-form" class="btn btn-primary" style="background:#fff; color:var(--maroon); margin-top:1.5rem; display:inline-block;">Express Interest</a>
           <p class="partner-subtext">Helping students access what they need, while keeping the process easy for schools</p>
         </div>
 
@@ -148,37 +148,47 @@
           <h3>Interested in bringing Pads for Peers to your school?</h3>
           <p>Complete this short form and a Pads for Peers officer will reach out to share more details, answer questions, and walk you through next steps.</p>
 
-          <form class="partner-form" action="mailto:program@padsforpeers.org" method="post" enctype="text/plain">
-            <div class="form-group">
-              <label for="school-name">School Name</label>
-              <input type="text" id="school-name" name="School Name" required>
+          <form class="partner-form" id="partnerForm">
+            <div class="form-grid-2col">
+              <div class="form-group">
+                <label for="school-name">School Name</label>
+                <input type="text" id="school-name" name="School Name" required>
+              </div>
+              <div class="form-group">
+                <label for="contact-name">Contact Name</label>
+                <input type="text" id="contact-name" name="Contact Name" required>
+              </div>
+              <div class="form-group">
+                <label for="role-title">Role / Title</label>
+                <input type="text" id="role-title" name="Role/Title" required>
+              </div>
+              <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="Email Address" required>
+              </div>
+              <div class="form-group">
+                <label for="phone">Phone Number <span style="font-weight:400; color:#888;">(optional)</span></label>
+                <input type="tel" id="phone" name="Phone Number">
+              </div>
+              <div class="form-group">
+                <label for="city">City / School Location</label>
+                <input type="text" id="city" name="City/School Location" required>
+              </div>
             </div>
-            <div class="form-group">
-              <label for="contact-name">Contact Name</label>
-              <input type="text" id="contact-name" name="Contact Name" required>
-            </div>
-            <div class="form-group">
-              <label for="role-title">Role / Title</label>
-              <input type="text" id="role-title" name="Role/Title" required>
-            </div>
-            <div class="form-group">
-              <label for="email">Email Address</label>
-              <input type="email" id="email" name="Email Address" required>
-            </div>
-            <div class="form-group">
-              <label for="phone">Phone Number <span style="font-weight:400; color:#888;">(optional)</span></label>
-              <input type="tel" id="phone" name="Phone Number">
-            </div>
-            <div class="form-group">
-              <label for="city">City / School Location</label>
-              <input type="text" id="city" name="City/School Location" required>
-            </div>
-            <div class="form-group">
+            <div class="form-group" style="margin-top:0.5rem;">
               <label for="notes">Anything you'd like us to know? <span style="font-weight:400; color:#888;">(optional)</span></label>
               <textarea id="notes" name="Anything you'd like us to know"></textarea>
             </div>
             <button type="submit" class="btn btn-primary">Submit Interest</button>
           </form>
+
+          <!-- Confirmation message (hidden until submit) -->
+          <div class="form-confirmation" id="formConfirmation" style="display:none;">
+            <div class="form-confirmation-icon">&#10003;</div>
+            <h4>Thank you for your interest!</h4>
+            <p>We have received your submission and a Pads for Peers officer will be in touch soon. We look forward to connecting with you!</p>
+          </div>
+
           <p class="form-disclaimer">Submitting this form does not commit your school to anything. It is simply a way to start the conversation.</p>
 
           <!-- What Happens Next -->
@@ -228,5 +238,31 @@
   </main>
 
   <script src="script.js"></script>
+  <script>
+    document.getElementById('partnerForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      const fields = {
+        'School Name': document.getElementById('school-name').value,
+        'Contact Name': document.getElementById('contact-name').value,
+        'Role/Title': document.getElementById('role-title').value,
+        'Email Address': document.getElementById('email').value,
+        'Phone Number': document.getElementById('phone').value,
+        'City/School Location': document.getElementById('city').value,
+        'Anything you\'d like us to know': document.getElementById('notes').value
+      };
+
+      const body = Object.entries(fields)
+        .map(([k, v]) => k + ': ' + v)
+        .join('\n');
+
+      window.location.href = 'mailto:program@padsforpeers.org'
+        + '?subject=' + encodeURIComponent('Partner With Us — School Interest Form')
+        + '&body=' + encodeURIComponent(body);
+
+      document.getElementById('partnerForm').style.display = 'none';
+      document.getElementById('formConfirmation').style.display = 'block';
+    });
+  </script>
 </body>
 </html>

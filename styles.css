@@ -1169,6 +1169,39 @@ img {
   line-height: 1.5;
 }
 
+.form-grid-2col {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0 1.5rem;
+}
+
+.form-confirmation {
+  background: #f0faf4;
+  border: 1px solid #a8d5b5;
+  border-radius: 16px;
+  padding: 2.5rem;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.form-confirmation-icon {
+  font-size: 2.5rem;
+  color: #2e7d4f;
+  margin-bottom: 0.75rem;
+}
+
+.form-confirmation h4 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #2e7d4f;
+  margin-bottom: 0.5rem;
+}
+
+.form-confirmation p {
+  font-size: 1rem;
+  color: #444;
+}
+
 @media (max-width: 900px) {
   .how-it-works-grid {
     grid-template-columns: 1fr;
@@ -1176,5 +1209,9 @@ img {
 
   .partner-hero-box h1 {
     font-size: 1.7rem;
+  }
+
+  .form-grid-2col {
+    grid-template-columns: 1fr;
   }
 }
