@@ -824,6 +824,15 @@ img {
   font-size: 0.85rem;
 }
 
+.footer a {
+  color: rgba(255, 255, 255, 0.9);
+  text-decoration: underline;
+}
+
+.footer a:hover {
+  color: #fff;
+}
+
 /* ============================================
    SCROLL ANIMATIONS
    ============================================ */
