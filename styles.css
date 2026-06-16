@@ -141,10 +141,11 @@ img {
   border: 2px solid var(--white);
 }
 
+.nav-link-donate,
 .nav-link-donate:hover,
 .nav-link-donate.active {
-  background: var(--white);
-  color: var(--maroon);
+  background: var(--maroon);
+  color: var(--white);
   border-color: var(--white);
 }
 
@@ -269,8 +270,8 @@ img {
 }
 
 .mission-donate .btn:hover {
-  background: var(--white);
-  color: var(--maroon);
+  background: var(--maroon);
+  color: var(--white);
   border-color: var(--white);
 }
 
