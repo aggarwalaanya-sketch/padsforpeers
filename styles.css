@@ -75,7 +75,7 @@ img {
 }
 
 .sidebar-header {
-  padding: 2rem 1.5rem 1.5rem;
+  padding: 1.25rem 1.5rem 1rem;
   border-bottom: 1px solid rgba(255, 255, 255, 0.15);
 }
 
@@ -102,7 +102,7 @@ img {
 
 .nav-links {
   list-style: none;
-  padding: 1rem 0;
+  padding: 0.5rem 0;
   flex: 1;
   overflow-y: auto;
 }
@@ -113,7 +113,7 @@ img {
 
 .nav-link {
   display: block;
-  padding: 0.75rem 1.5rem;
+  padding: 0.55rem 1.5rem;
   color: rgba(255, 255, 255, 0.8);
   font-size: 0.95rem;
   font-weight: 400;
@@ -126,6 +126,26 @@ img {
   color: var(--white);
   background: rgba(255, 255, 255, 0.1);
   border-left-color: var(--pink-2);
+}
+
+/* Donate button in the nav, just below Get In Touch */
+.nav-link-donate {
+  margin: 0.5rem 1.5rem;
+  padding: 0.6rem 1rem;
+  text-align: center;
+  background: var(--maroon);
+  color: var(--white);
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  border-radius: 50px;
+  border: 2px solid var(--white);
+}
+
+.nav-link-donate:hover,
+.nav-link-donate.active {
+  background: var(--white);
+  color: var(--maroon);
+  border-color: var(--white);
 }
 
 .sidebar-footer {
@@ -232,6 +252,58 @@ img {
   font-weight: 600;
   color: var(--maroon);
   margin: 3rem 0 1.5rem;
+}
+
+/* Homepage donate button (above mission) */
+.mission-donate {
+  text-align: center;
+  margin: 2rem 0 0;
+}
+
+.mission-donate .btn {
+  padding: 1.3rem 3.75rem;
+  font-size: 1.5rem;
+}
+
+/* Donate page */
+.donate-hero {
+  background: linear-gradient(135deg, var(--maroon), #b8295e);
+  color: var(--white);
+  padding: 2.5rem;
+  border-radius: 16px;
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+.donate-hero h2 {
+  font-size: 1.9rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.donate-hero p {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  max-width: 720px;
+  margin: 0 auto;
+  opacity: 0.95;
+}
+
+.donate-block {
+  margin-bottom: 2.5rem;
+}
+
+.donate-block .subsection-title {
+  margin-top: 0;
+}
+
+.donate-block p {
+  margin-bottom: 1.5rem;
+  line-height: 1.7;
+}
+
+.donate-cta {
+  display: inline-block;
 }
 
 /* ============================================
