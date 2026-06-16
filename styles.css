@@ -263,6 +263,15 @@ img {
 .mission-donate .btn {
   padding: 1.3rem 3.75rem;
   font-size: 1.5rem;
+  background: var(--maroon);
+  color: var(--white);
+  border: 2px solid var(--white);
+}
+
+.mission-donate .btn:hover {
+  background: var(--white);
+  color: var(--maroon);
+  border-color: var(--white);
 }
 
 /* Donate page */
