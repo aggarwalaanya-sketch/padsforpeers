@@ -272,8 +272,8 @@ img {
   box-shadow: 0 4px 20px rgba(148, 33, 77, 0.12);
 }
 
-.why-hero-image {
-  object-position: center 70%;
+.cbp-intro-text > .subsection-title:first-child {
+  margin-top: 0;
 }
 
 /* Homepage donate button (above mission) */
