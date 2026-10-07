@@ -27,6 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function animateCounter(el) {
     const target = parseInt(el.dataset.target);
+    const suffix = el.dataset.suffix || '';
     const duration = 1500;
     const start = performance.now();
 
@@ -37,12 +38,12 @@ document.addEventListener('DOMContentLoaded', () => {
       const eased = 1 - Math.pow(1 - progress, 3);
       const value = Math.round(eased * target);
 
-      el.textContent = value.toLocaleString();
+      el.textContent = value.toLocaleString() + suffix;
 
       if (progress < 1) {
         requestAnimationFrame(update);
       } else {
-        el.textContent = target.toLocaleString();
+        el.textContent = target.toLocaleString() + suffix;
       }
     }
 
@@ -128,10 +129,35 @@ document.addEventListener('DOMContentLoaded', () => {
     startAutoSlide();
   }
 
-  // ---- Cycling Word ----
-  const cyclingWord = document.getElementById('cycling-word');
-  if (cyclingWord) {
-    const words = ['education', 'health', 'self-confidence'];
+  // ---- Hero Typing Effect ----
+  const heroTyped = document.getElementById('hero-typed');
+  if (heroTyped) {
+    const textEl = heroTyped.querySelector('.typed-text');
+    const cursorEl = heroTyped.querySelector('.type-cursor');
+    const fullText = heroTyped.dataset.text || '';
+    let charIndex = 0;
+
+    function typeNext() {
+      if (charIndex <= fullText.length) {
+        textEl.textContent = fullText.slice(0, charIndex);
+        charIndex++;
+        setTimeout(typeNext, 110);
+      } else if (cursorEl) {
+        // Keep cursor blinking briefly, then fade it out
+        setTimeout(() => { cursorEl.style.display = 'none'; }, 1500);
+      }
+    }
+
+    typeNext();
+  }
+
+  // ---- Cycling Word(s) ----
+  document.querySelectorAll('.cycling-word').forEach(cyclingWord => {
+    const words = (cyclingWord.dataset.words || '')
+      .split(',')
+      .map(w => w.trim())
+      .filter(Boolean);
+    if (words.length < 2) return;
     let wordIndex = 0;
 
     setInterval(() => {
@@ -142,6 +168,6 @@ document.addEventListener('DOMContentLoaded', () => {
         cyclingWord.classList.remove('fade');
       }, 400);
     }, 2000);
-  }
+  });
 
 });
